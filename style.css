@@ -384,3 +384,66 @@ nav{}
 nav div{}
 nav div a{}
 nav div a img{}
+@media screen and (min-width: 768px) {
+    main{
+        transform: translate(-8rem);
+    }
+    .socials-title{
+        font-size: min(10rem, 30vw);
+        left: min(2rem, 10vw);
+        top: 2rem;
+    }
+    .socials-body h1{
+        width: 0;
+        transform: translateY(-160%);
+        margin-right: -10%;
+        white-space: nowrap;
+    }
+    .features{
+        margin-left: 8rem;
+        transform: translateY(40%);
+    }
+    .socials-links div{
+        padding: 0.5rem;
+    }
+    .socials-links div a{
+        width: 1.5rem;
+        height: 1.5rem;
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+    }
+    .socials-img{
+        width: 1.5rem;
+        height: 1.5rem;
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+    }
+    .socials-wrapper{
+        flex-direction: row;
+    }
+    .socials-links{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .socials-head{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .socials-body{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    .socials-img{
+        margin: 0.5rem;
+    }
+    .socials-img:hover{
+        transform: translateY(0px);
+    }
+    #github, #discord, #linkedin{
+        transform: translate(-10vw) rotate(180deg);
+    }
+}
