@@ -60,6 +60,7 @@ font-family: 'Unica One', cursive;
 .wip{
     top: 0px;
     left: 0;
+    position: fixed;
     transform: translate(-4px, -10px);
 }
 .cursor-outer{
