@@ -57,7 +57,11 @@ font-family: 'Unica One', cursive;
 * ::-webkit-scrollbar-thumb{
     background-color: var(--alt-text-color)
 }
-
+.wip{
+    top: 0px;
+    left: 0;
+    transform: translate(-4px, -10px);
+}
 .cursor-outer{
     position: fixed;
     left: 0;
