@@ -364,7 +364,7 @@ section{
     padding: 1rem 2rem;
     margin: .5rem 0;
     border-radius: 1rem;
-    width: min(calc(200% - 4rem), 99vw);
+    width: min(calc(200% - 4rem), calc(99vw - 4rem));
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -385,8 +385,33 @@ nav{}
 nav div{}
 nav div a{}
 nav div a img{}
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 769px) {
+    .project{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 5rem);
+    }
+    .projimg{
+        width: auto;
+    }
+    .project div img{
+        transform: translate(0);
+    }
+    .project div h3, .project div p{
+        text-align: center;
+    }
+    .socials-body div h1{
+        font-size: min(3rem, 10vw);
+        text-align: center;
+    }
+    .socials-text{
+        text-align: center;
+    }
+}
+@media screen and (min-width: 1200px) {
     main{
+        padding: 7rem 0;
         max-width: 90vw;
         margin-inline: auto;
         display: flex;
@@ -397,12 +422,8 @@ nav div a img{}
     .project{
         width: min(100%, 99vw);
     }
-    .socials-text{
-    }
-    .socials-title{
-        font-size: min(10rem, 30vw);
-        left: min(2rem, 10vw);
-        top: 2rem;
+    .socials-body-inner{
+        padding-right: 2rem;
     }
     .socials-body h1{
         white-space: nowrap;
