@@ -385,6 +385,12 @@ nav{}
 nav div{}
 nav div a{}
 nav div a img{}
+/* smartphones, touchscreens */
+@media (hover: none) {
+    .mouse-cursor{
+        display: none;
+    }
+}
 @media screen and (max-width: 769px) {
     .project{
         flex-direction: column;
