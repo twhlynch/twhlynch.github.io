@@ -477,4 +477,7 @@ nav div a img{}
     #github, #discord, #linkedin{
         transform: translate(-10vw) rotate(180deg);
     }
+    .socials-text{
+        margin-inline: 1rem;
+    }
 }
