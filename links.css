@@ -1,0 +1,191 @@
+.pfp{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    padding: 1rem;
+    z-index: 2;
+}
+.socials-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.socials-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.socials-links div{
+    padding: 1rem;
+}
+.socials-links div a{
+    width: 2rem;
+    height: 2rem;
+    max-width: 2rem;
+    max-height: 2rem;
+}
+.socials-img{
+    width: 2rem;
+    height: 2rem;
+    max-width: 2rem;
+    max-height: 2rem;
+    z-index: 1;
+}
+.socials-img:hover{
+    transform: translateY(10px);
+}
+#github{
+    transform: translate(calc(-100% - 3.5rem)) rotate(180deg);
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#discord{
+    transform: translate(calc(-200% - 5.5rem)) rotate(180deg);
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#linkedin{
+    transform: translate(calc(-300% - 7.5rem)) rotate(180deg);
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.socials-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.socials-title{
+    margin-inline: auto;
+    z-index: 0;
+    color: #262626;
+    position: absolute;
+    font-size: min(14rem, 30vw);
+    left: min(6rem, 10vw);
+    top: 4rem;
+    font-family: "Open Sans", sans-serif;
+    opacity: .5;
+    font-weight: 800;
+}
+.socials-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.socials-body h1{
+    color: var(--subtext-color);
+    font-weight: 600;
+    margin-top: 2rem;
+}
+.features{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+.project{
+    padding: 1rem 2rem;
+    margin: .5rem 0;
+    border-radius: 1rem;
+    width: min(calc(200% - 4rem), calc(99vw - 4rem));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.project div img{
+    height: 5rem;
+    transform: translate(-100%);
+}
+.projimg{
+    width: 0;
+}
+.project:hover{
+    background: var(--bg-alt);
+}
+@media screen and (max-width: 769px) {
+    .project{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 5rem);
+    }
+    .projimg{
+        width: auto;
+    }
+    .project div img{
+        transform: translate(0);
+    }
+    .project div h3, .project div p{
+        text-align: center;
+    }
+    .socials-body div h1{
+        font-size: min(3rem, 10vw);
+        text-align: center;
+    }
+    .socials-text{
+        text-align: center;
+    }
+}
+@media screen and (min-width: 1200px) {
+    main{
+        padding: 7rem 0;
+        max-width: 90vw;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .project{
+        width: min(100%, 99vw);
+    }
+    .socials-body-inner{
+        padding-right: 2rem;
+    }
+    .socials-body h1{
+        white-space: nowrap;
+        text-align: center;
+    }
+    .socials-links div{
+        padding: 0.5rem;
+    }
+    .socials-img{
+        width: 1.5rem;
+        height: 1.5rem;
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+    }
+    .socials-wrapper{
+        flex-direction: row;
+    }
+    .socials-links{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .socials-head{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .socials-body{
+        display: grid;
+        grid-template-columns: 40% 60%;
+        place-content: center;
+        gap: 2rem;
+    }
+    .socials-img{
+        margin: 0.5rem;
+    }
+    .socials-img:hover{
+        transform: translateY(0px);
+    }
+    #github, #discord, #linkedin{
+        transform: translate(-10vw) rotate(180deg);
+    }
+    .socials-text{
+        margin-inline: 1rem;
+    }
+}

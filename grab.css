@@ -1,316 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla&family=Lato&family=Merriweather:wght@300&family=Open+Sans:wght@800&family=Playfair+Display&family=Poppins:wght@600&family=Readex+Pro:wght@600&family=Unica+One&display=swap');
-@import"https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap";
-@import"https://fonts.googleapis.com/css2?family=Knewave&display=swap";
-/*
-font-family: 'Karla', sans-serif;
-font-family: 'Lato', sans-serif;
-font-family: 'Merriweather', serif;
-font-family: 'Playfair Display', serif;
-font-family: 'Poppins', sans-serif;
-font-family: 'Readex Pro', sans-serif;
-font-family: 'Unica One', cursive;
-*/
-:root{
-    --text-color: #e0e1f0;
-    --subtext-color: #b7b8c5;
-    --alt-text-color: #7a7a85;
-    --background-color: #14121a;
-    --alt-background-color: #131C22;
-    --accent-color: #329E9E;
-    --alt-accent-color: #215C59;
-    --font: Roboto Mono,monospace;
-    --font-size: 14px;
-    --weight-normal: 400;
-    --weight-medium: 500;
-    --weight-bold: 700;
-    --red: #d02b2b;
-    --green: #54d02b;
-    --bg: #1D1D1D;
-    --bg-alt: #201e26;
-    --bg-alt: #262626;
-    --color2: #215C59;
-    --color3: #1D201C;
-    --color4: #C3C7C4;
-    --color5: #3985AB;
-    --color6: #9B35E5;
-    --color7: #772EDC;
-    --color1: #4A14BA;
-
-}
-*{
-    /*outline: 1px solid #0f0;/**/
-    max-width: 100vw;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-color) var(--bg);
-    margin: 0;
-    -webkit-tap-highlight-color: transparent;
-}
-* ::-webkit-scrollbar{
-    width: 8px;
-    height: 8px
-}
-
-* ::-webkit-scrollbar-track-piece{
-    background-color: var(--bg)
-}
-
-* ::-webkit-scrollbar-thumb{
-    background-color: var(--alt-text-color)
-}
-.wip{
-    top: 0px;
-    left: 0;
-    position: fixed;
-    transform: translate(-4px, -10px);
-}
-.cursor-outer{
-    position: fixed;
-    left: 0;
-    top: 0;
-    pointer-events: none;
-    border-radius: 50%;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    margin-left: -15px;
-    margin-top: -15px;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #ced0d4;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    z-index: 10000000;
-    opacity: .5;
-    -webkit-transition: all .08s ease-out;
-    transition: all .08s ease-out
-}
-.cursor-inner{
-    position: fixed;
-    left: 0;
-    top: 0;
-    pointer-events: none;
-    border-radius: 50%;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    margin-left: -3px;
-    margin-top: -3px;
-    width: 6px;
-    height: 6px;
-    z-index: 10000001;
-    background-color: #ced0d4;
-    -webkit-transition: width .3s ease-in-out,height .3s ease-in-out,margin .3s ease-in-out,opacity .3s ease-in-out;
-    transition: width .3s ease-in-out,height .3s ease-in-out,margin .3s ease-in-out,opacity .3s ease-in-out
-}
-.mouse-cursor{
-    transform: translate(-100px, -100px)
-}
-.cursor-outer-hover{
-    opacity: 0;
-}
-.cursor-inner-hover {
-    margin-left: -30px;
-    margin-top: -30px;
-    width: 60px;
-    height: 60px;
-    background-color: #ced0d4;
-    opacity: .3
-}
-.noselect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-html{
-    font-size: var(--font-size);
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-body{
-    font-family: var(--font);
-    font-weight: var(--weight-normal);
-    color: var(--subtext-color);
-    background: var(--bg);
-    margin: 0;
-    tab-size: 4;
-    min-height: 100vh;
-}
-h1,h2,h3{
-    margin: 1rem 0 .5rem;
-    color: var(--text-color)
-}
-
-h1{
-    font-size: 3rem
-}
-
-h2{
-    font-size: 2rem
-}
-
-h2,h3{
-    font-weight: var(--weight-medium)
-}
-
-h3{
-    font-size: 1.35rem
-}
-p{
-    color: var(--subtext-color);
-    line-height: 160%;
-    margin: 1rem 0;
-}
-a{
-    color: var(--accent-color);
-    text-decoration: none;
-    background-image: linear-gradient(to right, #272727 0, var(--alt-accent-color) 100%);
-    background-size: 0 20%;
-    background-position: bottom left;
-    transition: background-size .7s;
-    background-repeat: no-repeat;
-}
-a:hover{
-    background-size: 100% 20%;
-}
-a:visited{
-    color: var(--alt-accent-color);
-}
-ol{
-    list-style: none;
-    padding-left: 0;
-    counter-reset: prefix
-}
-
-ol li{
-    counter-increment: prefix;
-    padding-left: 2rem
-}
-
-ol li:before{
-    content: counters(prefix,".") " ";
-    color: var(--accent-color);
-    font-weight: var(--weight-bold)
-}
-
-ul{
-    list-style: none;
-    padding-left: 0
-}
-
-ul li{
-    padding-left: 2rem
-}
-
-ul li:before{
-    content: "- ";
-    color: var(--accent-color);
-    font-weight: var(--weight-bold)
-}
-span{
-    font-family: Knewave,cursive;
-    color: #ff4783;
-}
-code{
-    padding: 0.3rem;
-    border-radius: 0.3rem;
-    background: var(--alt-background-color);
-    color: var(--text-color)
-}
-strong{
-    color: var(--text-color);
-}
-header{
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    width: calc(100% - 2rem);
-}
-.header-nav{
-    width: 10rem;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-main{
-    margin: auto;
-    max-width: 50rem;
-    padding: 7rem 1rem;
-}
-blockquote{
-    color: var(--text-color);
-    border-radius: 10px;
-    padding: 0 1rem;
-    position: relative;
-    margin: 2rem 0;
-}
-blockquote::after{
-    content: " ";
-    box-sizing: border-box;
-    position: absolute;
-    bottom: -1rem;
-    left: 0;
-    height: calc(100% + 2rem);
-    border-radius: 10px;
-    padding: 1rem;
-    z-index: 2;
-    width: 2px;
-    border-left: 4px solid var(--accent-color);
-}
-blockquote::before{
-    content: " ";
-    box-sizing: border-box;
-    position: absolute;
-    top: -1rem;
-    left: 0;
-    height: calc(100% + 2rem);
-    border-radius: 10px;
-    padding: 1rem;
-    z-index: -1;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    background: var(--accent-color);
-    opacity: .15;
-}
-.pfp{
-    width: 5rem;
-    height: 5rem;
-    border-radius: 100%;
-    padding: 1rem;
-    z-index: 2;
-}
-.socials-wrapper{
+.grab-wrapper{
     display: flex;
     flex-direction: column;
-}
-.socials-links{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-.socials-links div{
-    padding: 1rem;
-}
-.socials-links div a{
-    width: 2rem;
-    height: 2rem;
-    max-width: 2rem;
-    max-height: 2rem;
-}
-.socials-img{
-    width: 2rem;
-    height: 2rem;
-    max-width: 2rem;
-    max-height: 2rem;
-    z-index: 1;
-}
-.socials-img:hover{
-    transform: translateY(10px);
 }
 #github{
     transform: translate(calc(-100% - 3.5rem)) rotate(180deg);
@@ -324,17 +14,7 @@ blockquote::before{
     transform: translate(calc(-300% - 7.5rem)) rotate(180deg);
     transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.socials-head{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-section{
-    margin-bottom: 5rem;
-}
-.socials-title{
+.grab-title{
     margin-inline: auto;
     z-index: 0;
     color: #262626;
@@ -346,14 +26,14 @@ section{
     opacity: .5;
     font-weight: 800;
 }
-.socials-body{
+.grab-body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 2;
 }
-.socials-body h1{
+.grab-body h1{
     color: var(--subtext-color);
     font-weight: 600;
     margin-top: 2rem;
@@ -385,7 +65,7 @@ section{
 .project:hover{
     background: var(--bg-alt);
 }
-.socials-text{
+.grab-text{
     text-align: center;
 }
 .quick-links{
@@ -398,17 +78,6 @@ section{
 }
 .q-link, .q-link img{
  width: 3rem;
-}
-footer{}
-nav{}
-nav div{}
-nav div a{}
-nav div a img{}
-/* smartphones, touchscreens */
-@media (hover: none) {
-    .mouse-cursor{
-        display: none;
-    }
 }
 @media screen and (max-width: 768px) {
     .image-big{

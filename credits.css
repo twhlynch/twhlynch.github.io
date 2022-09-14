@@ -1,0 +1,23 @@
+.credits-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.credits-title{
+    margin-inline: auto;
+    z-index: 0;
+    color: #262626;
+    position: absolute;
+    font-size: min(14rem, 30vw);
+    left: min(6rem, 10vw);
+    top: 4rem;
+    font-family: "Open Sans", sans-serif;
+    opacity: .5;
+    font-weight: 800;
+}
+.credits-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
