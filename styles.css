@@ -1,0 +1,129 @@
+.my-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+.pfp {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    padding: 1rem;
+}
+.my-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+.my-links img {
+    width: 2rem;
+    height: 2rem;
+    max-width: 2rem;
+    max-height: 2rem;
+}
+.my-links a {
+    width: 2rem;
+    height: 2rem;
+    max-width: 2rem;
+    max-height: 2rem;
+}
+#main-info p {
+    text-align: center;
+}
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+#projects > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+.project {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    width: 100%;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 12px;
+}
+.project:hover {
+    outline: solid 4px var(--bg-alt);
+}
+.project > img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    max-height: 60%;
+    margin-inline: auto;
+}
+.particles-js-canvas-el {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+span > a, span > a:visited {
+    color: var(--color7);
+}
+@media screen and (max-width: 670px) {
+    .project, .details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .project > img {
+        max-height: 84px;
+        max-width: 150px;
+    }
+}
+
+#linktree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+#linktree > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+.connection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 12px;
+}
+.connection > img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    max-height: 60%;
+    margin-inline: auto;
+}
+.connection * {
+    align-items: center;
+    text-align: center;
+}
+.connection:hover {
+    outline: solid 4px var(--bg-alt);
+}
+.connection h3 {
+    margin: 0;
+}
