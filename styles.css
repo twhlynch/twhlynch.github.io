@@ -51,7 +51,7 @@
 .project {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    width: calc(100% - 23px);
+    width: calc(100% - 38px);
     align-items: center;
     padding: 5px 15px;
     border-radius: 12px;
