@@ -87,7 +87,6 @@ span > a, span > a:visited {
         max-width: 150px;
     }
 }
-
 #linktree {
     display: flex;
     flex-direction: column;
