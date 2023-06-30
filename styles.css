@@ -51,13 +51,14 @@
 .project {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    width: 100%;
+    width: calc(100% - 23px);
     align-items: center;
     padding: 5px 15px;
     border-radius: 12px;
+    border: solid 4px transparent;
 }
 .project:hover {
-    outline: solid 4px var(--bg-alt);
+    border: solid 4px var(--bg-alt);
 }
 .project > img {
     max-width: 100%;
@@ -109,6 +110,7 @@ span > a, span > a:visited {
     align-items: center;
     padding: 5px 15px;
     border-radius: 12px;
+    border: solid 4px transparent;
 }
 .connection > img {
     max-width: 100%;
@@ -122,7 +124,7 @@ span > a, span > a:visited {
     text-align: center;
 }
 .connection:hover {
-    outline: solid 4px var(--bg-alt);
+    border: solid 4px var(--bg-alt);
 }
 .connection h3 {
     margin: 0;
