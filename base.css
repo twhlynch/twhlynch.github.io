@@ -300,7 +300,7 @@ section {
     overflow-x: hidden;
 }
 footer {
-    background: var(--background-color);
+    color: var(--background-color);
     width: 100%;
     height: fit-content;
     display: flex;
