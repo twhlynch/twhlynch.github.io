@@ -39,6 +39,7 @@ font-family: 'Unica One', cursive;
 }
 * {
     /*outline: 1px solid #0f0;/**/
+    overscroll-behavior: none;
     max-width: 100vw;
     scrollbar-width: thin;
     scrollbar-color: var(--accent-color) var(--bg);
