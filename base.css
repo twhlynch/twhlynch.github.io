@@ -329,4 +329,6 @@ h1.title {
     font-family: "Open Sans", sans-serif;
     opacity: .5;
     font-weight: 800;
+    max-width: calc(100vw - min(6rem, 10vw));
+    overflow: hidden;
 }
