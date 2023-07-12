@@ -87,44 +87,11 @@ span > a, span > a:visited {
         max-width: 150px;
     }
 }
-#linktree {
+.connections {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 2rem;
-}
-#linktree > div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 2rem;
-}
-.connection {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 80%;
-    align-items: center;
-    padding: 5px 15px;
-    border-radius: 12px;
-    border: solid 4px transparent;
-}
-.connection > img {
-    max-width: 100%;
-    height: auto;
-    width: auto;
-    max-height: 60%;
-    margin-inline: auto;
-}
-.connection * {
-    align-items: center;
-    text-align: center;
-}
-.connection:hover {
-    border: solid 4px var(--bg-alt);
-}
-.connection h3 {
-    margin: 0;
+    padding-block: 1rem;
 }
