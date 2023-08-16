@@ -53,17 +53,18 @@
         </style>
     </head>
     <body>
-        <canvas id="canvas" width="800" height="800"></canvas>
+        <canvas id="canvas" width="1600" height="1600"></canvas>
         <div class="color-palette">
             <div class="color-option" style="background-color: rgb(255, 0, 0)"></div>
-            <div class="color-option" style="background-color: rgb(255, 106, 0)"></div>
+            <div class="color-option" style="background-color: rgb(255, 100, 0)"></div>
             <div class="color-option" style="background-color: rgb(255, 255, 0)"></div>
             <div class="color-option" style="background-color: rgb(0, 255, 0)"></div>
             <div class="color-option" style="background-color: rgb(0, 255, 255)"></div>
             <div class="color-option" style="background-color: rgb(0, 0, 255)"></div>
-            <div class="color-option" style="background-color: rgb(162, 12, 255)"></div>
+            <div class="color-option" style="background-color: rgb(150, 0, 255)"></div>
             <div class="color-option" style="background-color: rgb(255, 0, 255)"></div>
             <div class="color-option" style="background-color: rgb(0, 0, 0)"></div>
+            <div class="color-option" style="background-color: rgb(100, 100, 100)"></div>
             <div class="color-option" style="background-color: rgb(255, 255, 255)"></div>
         </div>
         <script>
@@ -71,7 +72,7 @@
             const canvas = document.getElementById("canvas");
             const ctx = canvas.getContext("2d");
             const colorOptions = document.querySelectorAll(".color-option");
-            const cellSize = 2;
+            const cellSize = 4;
 
             colorOptions.forEach((colorOption) => {
                 colorOption.addEventListener("click", () => {
