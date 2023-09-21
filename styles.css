@@ -95,3 +95,16 @@ span > a, span > a:visited {
     gap: 2rem;
     padding-block: 1rem;
 }
+#projects > .lang-icons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.lang-icons img {
+    width: 2rem;
+    height: 2rem;
+    max-width: 2rem;
+    max-height: 2rem;
+}
