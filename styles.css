@@ -103,8 +103,14 @@ span > a, span > a:visited {
     align-items: center;
 }
 .lang-icons img {
-    width: 2rem;
-    height: 2rem;
-    max-width: 2rem;
-    max-height: 2rem;
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+}
+.details img {
+    width: 1rem;
+    height: 1rem;
+    max-width: 1rem;
+    max-height: 1rem;
 }
