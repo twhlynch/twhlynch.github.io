@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: #0d1117;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #757e88;
+        }
+        main {
+            width: min(800px, 80%);
+            margin-inline: auto;
+        }
+        section {
+            padding: 16px;
+            width: 100%;
+        }
+        section#repos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .repo {
+            padding: 16px;
+            border: solid 1px rgb(48, 54, 61);
+            border-radius: 0.375rem;
+            width: 100%;
+            display: grid;
+            place-items: center;
+        }
+        .repo-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            height: 100%;
+        }
+        .repo-header {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+        }
+        .repo-header svg {
+            fill: #757e88;
+        }
+        .repo-header .repo-link {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+        }
+        .repo-header .repo-link svg:hover {
+            fill: #2f81f7;
+        }
+        .repo-header a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2f81f7;
+            text-decoration: none;
+        }
+        .repo-header a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .repo-header .repo-tag {
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 23.8px;
+            border: solid 1px rgb(48, 54, 61);
+            padding: .12em .5em;
+        }
+        .repo-body {
+            font-size: 12px;
+        }
+        .repo-footer {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            margin-top: auto;
+        }
+        .repo-footer .JavaScript-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #f1e05a;
+        }
+        .repo-footer .Python-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #3572a5;
+        }
+        .repo-footer .HTML-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #e34c26;
+        }
+        .repo-footer .Vue-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #41b883;
+        }
+        .repo-footer .Lua-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #000080;
+        }
+        .repo-footer .MarkDown-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #000000;
+        }
+        .repo-footer .repo-language {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .repo-footer svg {
+            fill: #757e88;
+        }
+        #reposKey {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            padding-inline: 32px;
+            padding-bottom: 0;
+            font-weight: 600;
+        }
+        #reposKey svg {
+            fill: #757e88;
+        }
+        #reposKey div {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+        }
+        #socials {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            padding-inline: 32px;
+            padding-bottom: 0;
+        }
+        .social {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            text-decoration: none;
+            color: #757e88;
+            font-weight: 600;
+        }
+        .social svg {
+            height: 16px;
+            width: 16px;
+            fill: #757e88;
+        }
+        #state {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            padding-inline: 32px;
+            padding-bottom: 0;
+        }
+        #state p {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        #state span {
+            color: #a1adbb;
+        }
+        @media screen and (max-width: 727px) {
+            section#repos {
+                grid-template-columns: 1fr;
+            }
+            section#reposKey {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="state">
+            <p>It's currently <span id="currentTime">12:00 PM</span> for me, so i'm probably <span id="currentState">awake</span>. I'll get back to you soon.</p>
+        </section>
+        <section id="socials">
+            <a href="https://github.com/twhlynch" class="social">
+                <svg height="16" viewBox="0 0 16 16" width="16">
+                    <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                </svg>
+                <span>@twhlynch</span>
+            </a>
+            <a href="https://discordapp.com/users/649165311257608192" class="social">
+                <svg viewBox="0 0 127.14 96.36">
+                    <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+                </svg>
+                <span>
+                    @.index
+                </span>
+            </a>
+            <a href="https://youtube.com/@dotindex" class="social">
+                <svg width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M15.6656 3.7488C15.4816 3.0608 14.9392 2.5184 14.2512 2.3344C13.0032 2 8 2 8 2C8 2 2.9968 2 1.7488 2.3344C1.0608 2.5184 0.5184 3.0608 0.3344 3.7488C-2.38419e-08 4.9968 0 8.4 0 8.4C0 8.4 -2.38419e-08 11.8032 0.3344 13.0512C0.5184 13.7392 1.0608 14.2816 1.7488 14.4656C2.9968 14.8 8 14.8 8 14.8C8 14.8 13.0032 14.8 14.2512 14.4656C14.94 14.2816 15.4816 13.7392 15.6656 13.0512C16 11.8032 16 8.4 16 8.4C16 8.4 16 4.9968 15.6656 3.7488ZM6.4 10.4784V6.3216C6.4 6.0136 6.7336 5.8216 7 5.9752L10.6 8.0536C10.8664 8.2072 10.8664 8.5928 10.6 8.7464L7 10.8248C6.7336 10.9792 6.4 10.7864 6.4 10.4784Z"></path>
+                </svg>
+                <span>
+                    @dotindex
+                </span>
+            </a>
+            <a href="mailto:twhlynch.index@gmail.com" class="social">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="fill: none;">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                <span>
+                    Email
+                </span>
+            </a>
+        </section>
+        <section id="reposKey">
+            <div>
+                <svg height="16" viewBox="0 0 16 16" width="16">
+                    <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path>
+                </svg>
+                <span>Source that I created</span>
+            </div>
+            <div>
+                <svg height="16" viewBox="0 0 16 16" width="16">
+                    <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"></path>
+                </svg>
+                <span>Forked source that I worked on</span>
+            </div>
+            <div>
+                <svg height="16" viewBox="0 0 16 16" width="16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"></path>
+                </svg>
+                <span>Private product I developed</span>
+            </div>
+        </section>
+        <section id="repos">
+        </section>
+    </main>
+        <script>
+        const repos = [
+            {
+                type: "source",
+                name: "grab-tools.live",
+                link: "https://grab-tools.live",
+                tag: "GRAB VR",
+                description: "A Grab VR \"Modding\" website, with tools and stats for the game",
+                language: "JavaScript",
+                stars: 2
+            },
+            {
+                type: "source",
+                name: "Rayne-SGM-to-OBJ",
+                link: "",
+                tag: "Rayne",
+                description: "SGM to OBJ converter and Blender import plugin for Rayne SGM files",
+                language: "Python",
+                stars: 2
+            },
+            {
+                type: "source",
+                name: "Web-ADB-Menu",
+                link: "https://twhlynch.me/Web-ADB-Menu",
+                tag: "Quest",
+                description: "A web based ADB command menu",
+                language: "JavaScript",
+                stars: 0
+            },
+            {
+                type: "source",
+                name: "twhlynch.github.io",
+                link: "",
+                tag: "Portfolio",
+                description: "This website",
+                language: "HTML",
+                stars: 0
+            },
+            {
+                type: "fork",
+                owner: "SlinDev-GmbH",
+                name: "Grab-Website",
+                link: "https://grabvr.quest",
+                tag: "GRAB VR",
+                description: "The website and level browser for the VR game GRAB",
+                language: "Vue",
+                stars: 2
+            },
+            {
+                type: "source",
+                name: "Roblox2Grab",
+                link: "",
+                tag: "ROBLOX",
+                description: "Scripts and Guide to export a ROBLOX Studio map to Grab VR",
+                language: "Lua",
+                stars: 3
+            },
+            {
+                type: "source",
+                name: "Mp42Grab",
+                link: "http://twhlynch.me/Mp42Grab/",
+                tag: "GRAB VR",
+                description: "A script to convert videos into 30x30 grayscale animations in Grab VR",
+                language: "Python",
+                stars: 3
+            },
+            {
+                type: "source",
+                name: "Not-Quite-Checkers",
+                link: "http://twhlynch.me/Not-Quite-Checkers/",
+                tag: "Checkers",
+                description: "A little checkers game with some fun modifiers",
+                language: "JavaScript",
+                stars: 0
+            },
+            {
+                type: "source",
+                name: "BlenderFrames2Grab",
+                link: "",
+                tag: "Blender",
+                description: "Convert Blender Keyframes To Grab Through BabylonJS",
+                language: "Python",
+                stars: 3
+            },
+            {
+                type: "source",
+                name: "APK-Modding-Guide",
+                link: "",
+                tag: "Android",
+                description: "A guide to decompile, modify, and recompile android packages.",
+                language: "MarkDown",
+                stars: 0
+            },
+            {
+                type: "source",
+                name: "AutoModder",
+                link: "",
+                tag: "Unity",
+                description: "A simple keyword based unity modding util",
+                language: "Python",
+                stars: 0
+            },
+            {
+                type: "source",
+                name: "WDTM",
+                link: "",
+                tag: "Unity",
+                description: "Allows you to see what GameObjects were modified within an apk",
+                language: "Python",
+                stars: 0
+            }
+        ];
+        const container = document.getElementById("repos");
+        const repoSVG = `
+            <svg height="16" viewBox="0 0 16 16" width="16">
+                <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path>
+            </svg>
+        `;
+        const forkSVG = `
+            <svg height="16" viewBox="0 0 16 16" width="16">
+                <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"></path>
+            </svg>
+        `;
+        (async () => {
+            let repoResponse = await fetch("https://api.github.com/users/twhlynch/repos");
+            let repoData = await repoResponse.json();
+            repos.forEach(async (repo) => {
+                let name = repo.name
+                let id = repo.owner ? repo.owner + "/" + name : "twhlynch/" + name;
+                let link = repo.link;
+                let linkHTML = `
+                    <a href="${link}" class="repo-link">
+                        <svg height="16" viewBox="0 0 16 16" width="16">
+                            <path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path>
+                        </svg>
+                    </a>`;
+                let stars = repo.stars;
+                if (repoData.length) {
+                    repoData.forEach((repo) => {
+                        if (repo.name === name) {
+                            stars = repo.stargazers_count;
+                        }
+                    });
+                }
+                let description = repo.description;
+                let language = repo.language;
+                let tag = repo.tag;
+                container.innerHTML += `
+                    <div class="repo">
+                        <div class="repo-content">
+                            <div class="repo-header">
+                                ${repo.type === 'fork' ? forkSVG : repoSVG}
+                                <a href="https://github.com/${id}" class="repo-name">${name}</a>
+                                ${link && linkHTML}
+                                <span class="repo-tag">${tag}</span>
+                            </div>
+                            <div class="repo-body">
+                                <p>${description}</p>
+                            </div>
+                            <div class="repo-footer">
+                                <span class="${language}-color"></span>
+                                <span class="repo-language">${language}</span>
+                                <svg height="16" viewBox="0 0 16 16" width="16">
+                                    <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path>
+                                </svg>
+                                <span class="repo-stars">${stars}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        })();
+
+        const currentTime = document.getElementById("currentTime");
+        const currentState = document.getElementById("currentState");
+        const time = new Date();
+
+        const options = { timeZone: 'Australia/Melbourne' };
+        const localTime = time.toLocaleString('en-US', options);
+
+        let hour = new Date(localTime).getHours();
+
+        if (hour >= 17 && hour < 24) {
+            currentState.innerHTML = "awake";
+        } else if (hour >= 9 && hour < 17) {
+            currentState.innerHTML = "working";
+        } else {
+            currentState.innerHTML = "sleeping";
+        }
+
+        currentTime.innerHTML = `${hour < 12 ? hour : hour - 12}:${new Date(localTime).getMinutes()} ${hour >= 12 ? "PM" : "AM"}`;
+
+
+    </script>
+</body>
+</html>
