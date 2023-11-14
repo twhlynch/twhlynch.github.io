@@ -24,7 +24,7 @@ const repos = [
         tag: "Quest",
         description: "A web based ADB command menu for messing with hidden settings.",
         language: "JavaScript",
-        stars: 0
+        stars: 1
     },
     {
         type: "source",
@@ -43,6 +43,15 @@ const repos = [
         tag: "GRAB VR",
         description: "The official website and level browser for the VR game GRAB!",
         language: "Vue",
+        stars: 2
+    },
+    {
+        type: "source",
+        name: "grab-tools-extension",
+        link: "",
+        tag: "GRAB VR",
+        description: "A chrome extension to add useful tools from grab-tools.live into the Grab VR website.",
+        language: "JavaScript",
         stars: 2
     },
     {
@@ -96,15 +105,6 @@ const repos = [
         link: "",
         tag: "Unity",
         description: "A simple keyword based unity modding utility.",
-        language: "Python",
-        stars: 0
-    },
-    {
-        type: "source",
-        name: "WDTM",
-        link: "",
-        tag: "Unity",
-        description: "Allows you to see what GameObjects were modified within an apk.",
         language: "Python",
         stars: 0
     }
