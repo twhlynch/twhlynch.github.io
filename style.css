@@ -208,8 +208,8 @@
             color: var(--text-color-link);
             text-decoration: none;
             font-size: var(--font-size-small);
-            color: var(--text-color-alt);
-            margin-inline: var(--padding-secondary);
+            color: var(--text-color);
+            /* margin-inline: var(--padding-secondary); */
             padding-top: 0;
         }
         h2 {
