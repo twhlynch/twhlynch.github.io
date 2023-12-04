@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,6 +27,7 @@
                     y: event.pageY
                 };
             } else if (event.type === 'touchmove') {
+                event.preventDefault(); // Prevent default touchmove behavior
                 position = {
                     x: event.touches[0].pageX,
                     y: event.touches[0].pageY
@@ -39,7 +40,7 @@
         }
 
         document.addEventListener('mousemove', handlePositionUpdate);
-        document.addEventListener('touchmove', handlePositionUpdate);
+        document.addEventListener('touchmove', handlePositionUpdate, { passive: false }); // Set passive to false for touch events
 
         socket.on('update_mouse_positions', function(data) {
             // Remove existing cursor elements
