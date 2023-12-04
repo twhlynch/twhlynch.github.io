@@ -35,6 +35,7 @@
             }
 
             if (position) {
+                console.log("emit");
                 socket.emit('mouse_position', position);
             }
         }
@@ -48,7 +49,7 @@
             existingCursors.forEach(function(cursor) {
                 cursor.parentNode.removeChild(cursor);
             });
-
+            console.log(data);
             // Add cursors for each user, including own cursor
             data.forEach(function(cursorPosition) {
                 var cursor = document.createElement('div');
