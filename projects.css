@@ -1,0 +1,57 @@
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-block: 20px;
+    max-width: 1000px;
+    margin-inline: auto;
+    gap: 30px;
+    padding-inline: 4rem;
+}
+.projects > a {
+    width: 300px;
+    padding: .8rem;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 4rem;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+.projects > a:hover {
+    background-color: #7d7d7d16;
+    border: none;
+}
+.projects > a > svg {
+    width: 3rem;
+    height: 3rem;
+    padding-block: .25rem;
+    padding-left: 0;
+    padding-right: .5rem;
+    fill: var(--fg-light);
+    opacity: .6;
+    transition: fill 0.3s ease-in-out;
+}
+.projects > a > h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    margin-right: auto;
+}
+.projects > a > p {
+    font-size: 0.8rem;
+    margin: 0;
+    margin-right: auto;
+    opacity: .6;
+    width: calc(100% - 3.5rem);
+}
+.ignore {
+    visibility: hidden;
+}
+footer {
+    margin-top: 5em;
+}
