@@ -26,3 +26,32 @@ if (toTop) {
         });
     });
 }
+
+// const idnexWrapper = document.querySelector(".logo");
+// let idnex = document.getElementById("idnex");
+
+// let isHoveringIdnex = false;
+// let isHoveringText = false;
+
+// idnexWrapper.addEventListener("mouseover", () => {
+//     isHoveringIdnex = true;
+//     setTimeout(() => {
+//         if (isHoveringIdnex) {
+//             idnex.style.display = "block";
+//         }
+//     }, 1000);
+// });
+// idnexWrapper.addEventListener("mouseout", () => {
+//     setTimeout(() => {
+//         if (!isHoveringText) {
+//             isHoveringIdnex = false;
+//             idnex.style.display = "none";
+//         }
+//     }, 200);
+// });
+// idnex.addEventListener("mouseover", () => {
+//     isHoveringText = true;
+// });
+// idnex.addEventListener("mouseout", () => {
+//     isHoveringText = false;
+// });
