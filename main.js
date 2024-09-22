@@ -154,6 +154,10 @@ if (popper) {
         
         popper.style.transform = `translate(${x}px, ${y}px)`;
     });
+    document.addEventListener("scroll", () => {
+        popper.style.visibility = "hidden";
+    });
+    let timeout;
     popperHovers.forEach((e) => {
         e.addEventListener("mouseenter", () => {
             popper.style.visibility = "visible";
@@ -162,6 +166,12 @@ if (popper) {
         });
         e.addEventListener("mouseleave", () => {
             popper.style.visibility = "hidden";
+        });
+        e.addEventListener("touchstart", () => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                popper.style.visibility = "hidden";
+            }, 1000);
         });
     });
 }
