@@ -137,3 +137,31 @@ if (loadArtButton) {
         }
     });
 }
+
+const popper = document.getElementById("popper");
+const popperText = document.getElementById("popper-text");
+
+const popperHovers = document.querySelectorAll(".popper-element");
+
+if (popper) {
+    document.addEventListener("mousemove", (e) => {
+        let x = e.clientX - popper.offsetLeft - popper.offsetWidth / 2;
+        let y = e.clientY - popper.offsetTop - popper.offsetHeight / 2;
+        
+        const pad = 10;
+        y - popper.offsetHeight * 1.5 > pad ? y -= popper.offsetHeight * 1.5 : y += popper.offsetHeight * 1.5;
+        x < pad ? x = pad : x > window.innerWidth - pad - popper.offsetWidth ? x = window.innerWidth - pad - popper.offsetWidth : x = x;
+        
+        popper.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    popperHovers.forEach((e) => {
+        e.addEventListener("mouseenter", () => {
+            popper.style.visibility = "visible";
+            const text = e.getAttribute("data-popper") || "Error :c";
+            popperText.innerText = text;
+        });
+        e.addEventListener("mouseleave", () => {
+            popper.style.visibility = "hidden";
+        });
+    });
+}

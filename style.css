@@ -352,6 +352,21 @@ h4.title {
     cursor: pointer;
 }
 
+#popper {
+    visibility: hidden;
+    position: fixed;
+    width: fit-content;
+    white-space: nowrap;
+    padding-block: 0.5rem;
+    padding-inline: 0.75rem;
+    border: 1px solid var(--c-scrollbar-hover);
+    background-color: var(--c-bg);
+    border-radius: 2.5rem;
+    font-size: 14px;
+    z-index: 99999;
+    transition: all 0.1s ease;
+}
+
 @media screen and (max-width: 640px) {
     #idnex {
         top: 4rem;
