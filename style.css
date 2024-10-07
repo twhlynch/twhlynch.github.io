@@ -256,6 +256,16 @@ h4.title {
     border: none;
     transition: background-color 0.3s ease-in-out;
 }
+.project-title {
+    font-size: 3rem;
+    color: var(--c-bg);
+    text-shadow: 0 0 1px var(--fg);
+    margin: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    margin-left: 20px;
+}
 .projects > a:hover {
     background-color: #7d7d7d16;
     border: none;
@@ -291,8 +301,10 @@ h4.title {
     opacity: .6;
     width: calc(100% - 3.5rem);
 }
-.ignore {
+.projects > .ignore {
     visibility: hidden;
+    height: 0;
+    padding: 0;
 }
 .back {
     margin-bottom: 5em;
