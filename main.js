@@ -175,3 +175,34 @@ if (popper) {
         });
     });
 }
+
+// wonk
+const arcButton = document.getElementById("arcButton");
+if (arcButton) {
+    arcButton.addEventListener("click", () => {
+        document.documentElement.classList.add('arc');
+        arcButton.style.transform = "translateX(100%)";
+        setTimeout(() => {
+            arcButton.style.display = "none";
+        }, 300);
+        localStorage.setItem("arc", "true");
+    });
+}
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("arc") == "true") {
+        document.documentElement.classList.add('arc');
+    } else if (arcButton) {
+        let arcInterval = setInterval(() => {
+            let styles = getComputedStyle(document.documentElement);
+            if (styles.getPropertyValue('--arc-palette-title')) {
+                arcButton.style.display = "flex";
+                setTimeout(() => {
+                    arcButton.style.transform = "translateX(0)";
+                }, 100);
+            }
+        }, 100);
+        setTimeout(() => {
+            clearInterval(arcInterval);
+        }, 1000);
+    }
+});
