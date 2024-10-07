@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
-    --c-bg: #050505;
-    --c-scrollbar: #111;
-    --c-scrollbar-hover: #222;
-    --fg-light: #888;
-    --fg: #bbb;
-    --fg-deep: #ddd;
-    --fg-deeper: #fff;
+    --c-bg: var(--arc-palette-background, #050505);
+    --c-scrollbar: var(--arc-palette-hover, #111);
+    --c-scrollbar-hover: var(--arc-palette-focus, #222);
+    --fg-light: var(--arc-palette-subtitle, #888);
+    --fg: var(--arc-palette-foregroundSecondary, #bbb);
+    --fg-deep: var(--arc-palette-title, #ddd);
+    --fg-deeper: var(--arc-palette-foregroundPrimary, #fff);
     --color-note: #2f81f7;
     --color-tip: #3fb950;
     --color-warning: #d29922;
