@@ -8,9 +8,9 @@
             result="turbulence"
         />
         <feSpecularLighting
-            surfaceScale="30"
+            surfaceScale="40"
             specularConstant="0.2"
-            specularExponent="20"
+            specularExponent="30"
             lighting-color="#fff"
             in="turbulence"
             result="specularLighting"
