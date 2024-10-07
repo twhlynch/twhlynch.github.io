@@ -259,7 +259,7 @@ h4.title {
 .project-title {
     font-size: 3rem;
     color: var(--c-bg);
-    text-shadow: 0 0 1px var(--fg);
+    text-shadow: 0 0 1px var(--fg-deep);
     margin: 0;
     user-select: none;
     -webkit-user-select: none;
