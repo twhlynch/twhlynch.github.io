@@ -307,6 +307,10 @@ h4.title {
     -webkit-user-select: none;
     -moz-user-select: none;
     margin-left: 20px;
+
+    margin-inline: auto;
+    width: calc(65ch / 3);
+    max-width: calc(100svw - 4rem);
 }
 .projects > a:hover {
     background-color: #7d7d7d16;
@@ -353,7 +357,9 @@ h4.title {
 }
 .back {
     margin-bottom: 5em;
-    margin-left: 2rem;
+    margin-inline: auto;
+    width: 65ch;
+    max-width: calc(100svw - 4rem);
 }
 #idnex {
     display: none;
