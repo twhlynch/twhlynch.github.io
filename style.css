@@ -41,9 +41,9 @@ html.arc {
 
 html {
     background-color: var(--c-bg);
-    background-image: url(images/noise.svg);
+    /* background-image: url(images/noise.svg);
     background-size: 250px 250px;
-    background-repeat: repeat;
+    background-repeat: repeat; */
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
 }
 body {
