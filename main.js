@@ -77,11 +77,11 @@ const loadArtButton = document.getElementById("load-art");
 const artContainer = document.getElementById("fanart");
 
 let fanartURls = [
-    ["images/idnex/idnex_meme.jpeg", "artist"],
-    ["images/idnex/idnex_scratch.jpeg", "artist"],
-    ["images/idnex/idnex_sketch.jpeg", "artist"],
-    ["images/idnex/idnex_skib.jpeg", "artist"],
-    ["images/idnex/idnex_vs_jojo.jpeg", "artist"],
+    ["images/idnex/idnex_meme.jpeg", "aidentheblueslime"],
+    ["images/idnex/idnex_sketch.jpeg", "Cashi"],
+    ["images/idnex/idnex_skib.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/idnex_vs_jojo.jpeg", "thatoneduck101"],
+    ["images/idnex/idnex_scratch.jpg", "forevrgrab"],
     ["images/idnex/idnex_comic_die.jpeg", "papery"],
     ["images/idnex/idnex_goof.gif", "lulux"],
     ["images/idnex/idnex_peace.jpeg", "TCXRandom"],
