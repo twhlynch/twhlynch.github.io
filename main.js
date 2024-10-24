@@ -77,43 +77,54 @@ const loadArtButton = document.getElementById("load-art");
 const artContainer = document.getElementById("fanart");
 
 let fanartURls = [
-    "images/idnex/femdex_dead.jpeg",
-    "images/idnex/femdex_mountain.jpeg",
-    "images/idnex/femdex_video.jpeg",
-    "images/idnex/femdex.jpeg",
-    "images/idnex/femdex2.jpeg",
-    "images/idnex/idnex_3d.jpeg",
-    "images/idnex/idnex_addict.jpeg",
-    "images/idnex/idnex_alastor.jpeg",
-    "images/idnex/idnex_buff.jpeg",
-    "images/idnex/idnex_bullets.jpeg",
-    "images/idnex/idnex_creation.jpeg",
-    "images/idnex/idnex_dance.gif",
-    "images/idnex/idnex_fortnite.jpeg",
-    "images/idnex/idnex_gd.jpeg",
-    "images/idnex/idnex_goof.gif",
-    "images/idnex/idnex_igor.jpeg",
-    "images/idnex/idnex_jojo.jpeg",
-    "images/idnex/idnex_lethal_company.jpeg",
-    "images/idnex/Idnex_lore.jpeg",
-    "images/idnex/idnex_meme.jpeg",
-    "images/idnex/idnex_minecraft.jpeg",
-    "images/idnex/idnex_mountain.jpeg",
-    "images/idnex/idnex_origin.jpeg",
-    "images/idnex/idnex_origin2.jpeg",
-    "images/idnex/idnex_peace.jpeg",
-    "images/idnex/idnex_pixel.jpeg",
-    "images/idnex/idnex_reborn.jpeg",
-    "images/idnex/idnex_ree.jpeg",
-    "images/idnex/idnex_scratch.jpeg",
-    "images/idnex/idnex_sit.jpeg",
-    "images/idnex/idnex_sketch.jpeg",
-    "images/idnex/idnex_skib.jpeg",
-    "images/idnex/idnex_toon_suffer.jpeg",
-    "images/idnex/idnex_toon.jpeg",
-    "images/idnex/idnex.jpeg",
-    "images/idnex/index_banner.jpeg",
-    "images/idnex/Page1.jpeg"
+    ["images/idnex/idnex_meme.jpeg", "artist"],
+    ["images/idnex/idnex_scratch.jpeg", "artist"],
+    ["images/idnex/idnex_sketch.jpeg", "artist"],
+    ["images/idnex/idnex_skib.jpeg", "artist"],
+    ["images/idnex/idnex_vs_jojo.jpeg", "artist"],
+    ["images/idnex/idnex_comic_die.jpeg", "papery"],
+    ["images/idnex/idnex_goof.gif", "lulux"],
+    ["images/idnex/idnex_peace.jpeg", "TCXRandom"],
+    ["images/idnex/idnex_pixel.jpeg", "GentVR"],
+    ["images/idnex/idnex_ree.jpeg", "PurpleSmile"],
+    ["images/idnex/idnex_sit.jpeg", "plushgaming"],
+    ["images/idnex/idnex_pfp.jpeg", "flare"],
+    ["images/idnex/idnex_origin.jpeg", "JeffBobDude"],
+    ["images/idnex/femdex_dead.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/femdex_mountain.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/femdex_video.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/femdex.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/femdex2.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/idnex_3d.jpeg", "Eclipse"],
+    ["images/idnex/idnex_addict.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/idnex_alastor.jpeg", "Eclipse"],
+    ["images/idnex/idnex_buff.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/idnex_bullets.jpeg", "CokeDee"],
+    ["images/idnex/idnex_creation.jpeg", "Raaquilla"],
+    ["images/idnex/idnex_dance.gif", "Raaquilla"],
+    ["images/idnex/idnex_fortnite.jpeg", "dawn"],
+    ["images/idnex/idnex_vrc.jpeg", "dawn"],
+    ["images/idnex/idnex_gd.jpeg", "Dandestroys"],
+    ["images/idnex/idnex_cartoon.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/idnex_igor.jpeg", "Chazerz"],
+    ["images/idnex/idnex_jojo.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/idnex_lethal_company.jpeg", "Eclipse"],
+    ["images/idnex/Idnex_lore.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/idnex_minecraft.jpeg", "Dandestroys"],
+    ["images/idnex/idnex_mountain.jpeg", "Wpbrotherly"],
+    ["images/idnex/idnex_origin2.jpeg", "JeffBobDude"],
+    ["images/idnex/idnex_reborn.jpeg", "Supermeow"],
+    ["images/idnex/idnex_toon_suffer.jpeg", "BlackCat508"],
+    ["images/idnex/idnex_toon.jpeg", "BlackCat508"],
+    ["images/idnex/idnex.jpeg", "Eclipse"],
+    ["images/idnex/index_banner.jpeg", "BlackCat508"],
+    ["images/idnex/Page1.jpeg", "TheWhiteCrescent"],
+    ["images/idnex/index_render.jpeg", "vestria"],
+    ["images/idnex/idnex_dancing.gif", "Raaquilla"],
+    ["images/idnex/idnex_vs_index.gif", "Raaquilla"],
+    ["images/idnex/dot_funky.gif", "Raaquilla"],
+    ["images/idnex/idnex_dump.jpeg", "Chazerz"],
+    ["images/idnex/index_furry.jpeg", "xanderiscooler"],
 ];
 fanartURls.sort((a, b) => { return Math.random() > 0.5 ? -1 : 1; });
 
@@ -125,15 +136,18 @@ if (loadArtButton) {
 
         let limit = artIndex + 11;
         while (artIndex <= limit) {
-            let url = fanartURls[artIndex];
+            let url = fanartURls[artIndex][0];
+            let artist = fanartURls[artIndex][1];
             const container = document.createElement("div");
             container.classList.add("art-container");
             const img = document.createElement("img");
+            if (artist != "artist") img.classList.add("popper-element");
             img.onerror = () => {
                 container.style.display = "none";
                 console.log(url);
             };
             img.src = url;
+            if (artist != "artist") img.setAttribute("data-popper", artist);
             img.addEventListener("click", () => {
                 window.open(url, "_blank");
             });
@@ -145,13 +159,12 @@ if (loadArtButton) {
                 artIndex = 0;
             }
         }
+        initPopper();
     });
 }
 
 const popper = document.getElementById("popper");
 const popperText = document.getElementById("popper-text");
-
-const popperHovers = document.querySelectorAll(".popper-element");
 
 if (popper) {
     document.addEventListener("mousemove", (e) => {
@@ -167,24 +180,37 @@ if (popper) {
     document.addEventListener("scroll", () => {
         popper.style.visibility = "hidden";
     });
-    let timeout;
-    popperHovers.forEach((e) => {
-        e.addEventListener("mouseenter", () => {
-            popper.style.visibility = "visible";
-            const text = e.getAttribute("data-popper") || "Error :c";
-            popperText.innerText = text;
-        });
-        e.addEventListener("mouseleave", () => {
-            popper.style.visibility = "hidden";
-        });
-        e.addEventListener("touchstart", () => {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                popper.style.visibility = "hidden";
-            }, 1000);
-        });
-    });
 }
+
+let popperHovers = document.querySelectorAll(".popper-element");
+
+function initPopper() {
+    popperHovers = document.querySelectorAll(".popper-element");
+
+    if (popper) {
+        let timeout;
+        popperHovers.forEach((e) => {
+            if (!e.classList.contains("popper-active")) {
+                e.addEventListener("mouseenter", () => {
+                    popper.style.visibility = "visible";
+                    const text = e.getAttribute("data-popper") || "Error :c";
+                    popperText.innerText = text;
+                });
+                e.addEventListener("mouseleave", () => {
+                    popper.style.visibility = "hidden";
+                });
+                e.addEventListener("touchstart", () => {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => {
+                        popper.style.visibility = "hidden";
+                    }, 1000);
+                });
+                e.classList.add("popper-active");
+            }
+        });
+    }
+}
+initPopper();
 
 // wonk
 const arcButton = document.getElementById("arcButton");
