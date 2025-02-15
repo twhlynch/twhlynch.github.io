@@ -14,6 +14,11 @@ function updateTimezoneInfo() {
 updateTimezoneInfo();
 setInterval(updateTimezoneInfo, 1000 * 10);
 
+const age = document.getElementById('age');
+const dob = new Date(Date.UTC(2005, 3, 20));
+const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Australia/Melbourne' }));
+age.innerText = new Date(now.getTime() - dob.getTime()).getFullYear() - 1970;
+
 const toTop = document.getElementById("toTop");
 if (toTop) {
     toTop.addEventListener("click", () => {

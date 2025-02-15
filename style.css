@@ -1,5 +1,5 @@
-/* Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script:wght@400&display=swap');
 
 :root {
     --base-c-bg: #050505;
@@ -59,6 +59,22 @@ p {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+}
+i {
+    position: relative;
+}
+i::before {
+    content: attr(p);
+    position: absolute;
+    top: -0.6rem;
+    left: -1.4rem;
+    transform: rotate(5deg);
+    font-family: 'Bad Script',cursive,serif;
+    font-weight: lighter;
+    font-size: 0.6rem;
+    white-space: nowrap;
+    color: var(--fg-super);
+    opacity: 0.4;
 }
 button:not(.to-top) {
     padding: 0.5rem 1rem;
