@@ -335,6 +335,7 @@ h4.title {
     fill: var(--fg-light);
     opacity: .6;
     transition: fill 0.3s ease-in-out;
+    object-fit: contain;
 }
 .projects > a > img {
     width: 3rem;
@@ -344,6 +345,7 @@ h4.title {
     padding-right: .5rem;
     opacity: .6;
     transition: fill 0.3s ease-in-out;
+    object-fit: contain;
 }
 .projects > a > h2 {
     font-size: 1.2rem;
