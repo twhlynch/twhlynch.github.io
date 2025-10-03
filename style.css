@@ -231,11 +231,11 @@ main {
     font-size: 1rem;
     line-height: 1.75;
 }
-main a:not(:has(img)) {
+main a:not(:has(img)):not(:has(svg)) {
     border-bottom: 1px solid #7d7d7d4d;
     transition: border .3s ease-in-out;
 }
-main a:hover:not(:has(img)) {
+main a:hover:not(:has(img)):not(:has(svg)) {
     border-bottom: 1px solid var(--fg);
 }
 footer {
