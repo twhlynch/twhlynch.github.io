@@ -329,20 +329,6 @@ h4.title {
 	transition: background-color 0.3s ease-in-out;
 	margin: auto;
 }
-.project-title {
-	font-size: 3rem;
-	color: var(--c-bg);
-	text-shadow: 0 0 1px var(--fg-deep);
-	margin: 0;
-	user-select: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	margin-left: 20px;
-
-	margin-inline: auto;
-	width: calc(65ch / 3);
-	max-width: calc(100svw - 4rem);
-}
 .projects > a:hover {
 	background-color: #7d7d7d16;
 	border: none;
