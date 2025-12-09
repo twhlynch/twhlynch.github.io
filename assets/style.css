@@ -232,7 +232,7 @@ nav a:hover {
 .to-top:hover {
 	background-color: #7d7d7d4d;
 
-	background-image: url(images/noise.svg);
+	background-image: url(/public/images/noise.svg);
 	background-size: 250px 250px;
 	background-repeat: repeat;
 }
@@ -401,7 +401,7 @@ h4.title {
 	font-size: 14px;
 	cursor: pointer;
 
-	background-image: url(images/noise.svg);
+	background-image: url(/public/images/noise.svg);
 	background-size: 250px 250px;
 	background-repeat: repeat;
 }
@@ -455,7 +455,7 @@ h4.title {
 	z-index: 99999;
 	transition: all 0.1s ease;
 
-	background-image: url(images/noise.svg);
+	background-image: url(/public/images/noise.svg);
 	background-size: 250px 250px;
 	background-repeat: repeat;
 }
