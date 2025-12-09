@@ -1,0 +1,21 @@
+export function setup_age() {
+	const element = document.getElementById('age');
+
+	if (!element) return;
+
+	// april 20, 2005
+	const birthday = new Date(2005, 3, 20);
+
+	// now in melbourne
+	const now = new Date(new Date().toLocaleString('en-AU', { timeZone: 'Australia/Melbourne' }));
+
+	// same year but before birthday
+	const offset =
+		now.getMonth() < birthday.getMonth() ||
+		(now.getMonth() === birthday.getMonth() && now.getDate() < birthday.getDate());
+
+	// - offset coerces it to 1 or 0
+	const age = now.getFullYear() - birthday.getFullYear() - offset;
+
+	element.textContent = `${age}`;
+}
