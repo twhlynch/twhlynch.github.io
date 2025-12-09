@@ -33,17 +33,17 @@ html {
 		ui-sans-serif,
 		system-ui,
 		sans-serif,
-		"Apple Color Emoji",
-		"Segoe UI Emoji",
+		'Apple Color Emoji',
+		'Segoe UI Emoji',
 		Segoe UI Symbol,
-		"Noto Color Emoji";
+		'Noto Color Emoji';
 	min-height: 100svh;
 }
 body {
 	margin: 0;
 	color: var(--fg);
 	font-family:
-		"Inter",
+		'Inter',
 		ui-sans-serif,
 		system-ui,
 		-apple-system,
@@ -54,10 +54,10 @@ body {
 		Arial,
 		Noto Sans,
 		sans-serif,
-		"Apple Color Emoji",
-		"Segoe UI Emoji",
+		'Apple Color Emoji',
+		'Segoe UI Emoji',
 		Segoe UI Symbol,
-		"Noto Color Emoji";
+		'Noto Color Emoji';
 	position: relative;
 	min-height: 100svh;
 }
@@ -78,7 +78,7 @@ hr {
 	overflow: visible;
 }
 hr::after {
-	content: "";
+	content: '';
 	position: absolute;
 	left: 0;
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke-linecap='round' viewBox='-0.2 -3.86667 33.21 4.067'%3E%3Cpath d='M0 0 25-3Q42-5 22-1 11 1 31-1' stroke='%237d7d7d4d' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
@@ -105,7 +105,7 @@ i::before {
 	top: -0.6rem;
 	left: -1.4rem;
 	transform: rotate(5deg);
-	font-family: "Bad Script", cursive, serif;
+	font-family: 'Bad Script', cursive, serif;
 	font-weight: lighter;
 	font-size: 0.6rem;
 	white-space: nowrap;
@@ -282,7 +282,7 @@ h4.title {
 	font-size: min(14rem, 28vw);
 	left: min(6rem, 10vw);
 	top: 4rem;
-	font-family: "Open Sans", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	opacity: 0.1;
 	font-weight: 800;
 	max-width: calc(100vw - min(6rem, 10vw));
