@@ -4,10 +4,10 @@ export function setup_age() {
 	if (!element) return;
 
 	// april 20, 2005
-	const birthday = new Date(2005, 3, 20);
+	const birthday = new Date(Date.UTC(2005, 3, 20));
 
 	// now in melbourne
-	const now = new Date(new Date().toLocaleString('en-AU', { timeZone: 'Australia/Melbourne' }));
+	const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Australia/Melbourne' }));
 
 	// same year but before birthday
 	const offset =

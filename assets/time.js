@@ -5,7 +5,7 @@ export function setup_time() {
 	if (!state_element || !time_element) return;
 
 	const update = () => {
-		const now = new Date(new Date().toLocaleString('en-AU', { timeZone: 'Australia/Melbourne' }));
+		const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Australia/Melbourne' }));
 
 		const hour = now.getHours();
 		const minutes = now.getMinutes();
