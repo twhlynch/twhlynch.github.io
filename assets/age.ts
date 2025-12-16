@@ -14,8 +14,8 @@ export function setup_age() {
 		now.getMonth() < birthday.getMonth() ||
 		(now.getMonth() === birthday.getMonth() && now.getDate() < birthday.getDate());
 
-	// - offset coerces it to 1 or 0
-	const age = now.getFullYear() - birthday.getFullYear() - offset;
+	// coerces offset to 1 or 0
+	const age = now.getFullYear() - birthday.getFullYear() - Number(offset);
 
 	element.textContent = `${age}`;
 }

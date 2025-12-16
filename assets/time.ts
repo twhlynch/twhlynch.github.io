@@ -5,18 +5,26 @@ export function setup_time() {
 	if (!state_element || !time_element) return;
 
 	const update = () => {
+		// now in melbourne
 		const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Australia/Melbourne' }));
 
-		const hour = now.getHours();
+		let hours = now.getHours();
 		const minutes = now.getMinutes();
 
-		const time = `${hour <= 12 ? hour : hour - 12}:${minutes < 10 ? '0' + minutes : minutes}`;
-		const meridian = hour >= 12 ? 'PM' : 'AM';
+		// AM or PM
+		const meridian = hours > 12 ? 'PM' : 'AM';
 
-		const state = hour < 9 ? 'sleeping' : hour < 17 ? 'working' : 'awake';
+		// sleeping till 9, working till 5
+		const state = hours < 9 ? 'sleeping' : hours < 17 ? 'working' : 'awake';
+
+		// convert to 12 hour time
+		if (hours > 12) hours -= 12;
+
+		// pad minutes with 0
+		const minutes_string = String(minutes).padStart(2, '0');
 
 		state_element.textContent = `${state}`;
-		time_element.textContent = `${time} ${meridian}`;
+		time_element.textContent = `${hours}:${minutes_string} ${meridian}`;
 	};
 
 	update();

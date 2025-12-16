@@ -36,12 +36,15 @@ export function setup_idnex() {
 	const update = () => {
 		show();
 
+		// random quote
 		index = Math.floor(Math.random() * quotes.length);
 
 		quote_element.innerHTML = quotes[index];
 
+		// hide after 2 seconds
 		setTimeout(hide, 1000 * 2);
 	};
 
+	// every 20 seconds
 	setInterval(update, 1000 * 20);
 }
