@@ -39,10 +39,14 @@ export function setup_popper() {
 		el.addEventListener('mouseenter', () => show(el));
 		el.addEventListener('mouseleave', hide);
 
-		el.addEventListener('touchstart', () => {
-			clearTimeout(timeout);
-			timeout = setTimeout(hide, 1000);
-		});
+		el.addEventListener(
+			'touchstart',
+			() => {
+				clearTimeout(timeout);
+				timeout = setTimeout(hide, 1000);
+			},
+			{ passive: true },
+		);
 		el.classList.add('popper-active');
 	});
 }
