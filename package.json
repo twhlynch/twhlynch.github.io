@@ -8,6 +8,7 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
+		"postcss-nesting": "^13.0.2",
 		"vite": "^7.2.7",
 		"vite-plugin-handlebars": "^2.0.0"
 	}

@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 import fs from 'fs';
 import path from 'path';
+import postcssNesting from 'postcss-nesting';
 
 const html_files = fs
 	.readdirSync(__dirname)
@@ -21,6 +22,11 @@ export default defineConfig({
 	build: {
 		rollupOptions: {
 			input: html_files,
+		},
+	},
+	css: {
+		postcss: {
+			plugins: [postcssNesting],
 		},
 	},
 });
