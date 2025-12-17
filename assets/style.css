@@ -141,25 +141,31 @@ nav {
 	height: 1.2em;
 	width: 1.2em;
 	vertical-align: text-bottom;
+
+	/* prettier-ignore */
+	& {
+		&.i-arrow-up { --icon: url(/public/images/icons/arrow_up.svg); }
+		&.i-discord { --icon: url(/public/images/icons/discord.svg); }
+		&.i-github { --icon: url(/public/images/icons/github.svg); }
+		&.i-youtube { --icon: url(/public/images/icons/youtube.svg); }
+		&.i-bsky { --icon: url(/public/images/icons/bsky.svg); }
+		&.i-linkedin { --icon: url(/public/images/icons/linkedin.svg); }
+		&.i-zig { --icon: url(/public/images/icons/zig.svg); }
+		&.i-blender { --icon: url(/public/images/icons/blender.svg); }
+		&.i-lua { --icon: url(/public/images/icons/lua.svg); }
+		&.i-threejs { --icon: url(/public/images/icons/threejs.svg); }
+		&.i-astro { --icon: url(/public/images/icons/astro.svg); }
+		&.i-vue { --icon: url(/public/images/icons/vue.svg); }
+		&.i-js { --icon: url(/public/images/icons/js.svg); }
+		&.i-python { --icon: url(/public/images/icons/python.svg); }
+		&.i-cpp { --icon: url(/public/images/icons/cpp.svg); }
+		&.i-github-alt { --icon: url(/public/images/icons/github_alt.svg); }
+		&.i-nvim { --icon: url(/public/images/icons/neovim.svg); }
+		&.i-html { --icon: url(/public/images/icons/html.svg); }
+		&.i-miraheze { --icon: url(/public/images/icons/miraheze.svg); }
+	}
 }
-.i-arrow-up {
-	--icon: url(/public/images/icons/arrow_up.svg);
-}
-.i-discord {
-	--icon: url(/public/images/icons/discord.svg);
-}
-.i-github {
-	--icon: url(/public/images/icons/github.svg);
-}
-.i-youtube {
-	--icon: url(/public/images/icons/youtube.svg);
-}
-.i-bsky {
-	--icon: url(/public/images/icons/bsky.svg);
-}
-.i-linkedin {
-	--icon: url(/public/images/icons/linkedin.svg);
-}
+
 a {
 	cursor: pointer;
 	text-decoration: none;
