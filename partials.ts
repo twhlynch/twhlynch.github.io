@@ -72,9 +72,15 @@ function render(content: string, context: Context = {}, root: string = process.c
 }
 
 export default function partials(): Plugin {
-	// runs on all build input files
-	function transform_input(html: string) {
-		return render(html);
+	// runs on main build input files
+	function transform_html(code: string, id: string): string | null {
+		if (!id.endsWith('.html')) return null;
+		return render(code);
+	}
+
+	// run on result in dev?
+	function transform_index(code: string): string {
+		return render(code);
 	}
 
 	// full reload on changes
@@ -87,7 +93,8 @@ export default function partials(): Plugin {
 	return {
 		name: 'vite-partials',
 		enforce: 'pre',
-		transformIndexHtml: transform_input,
+		transform: transform_html,
+		transformIndexHtml: transform_index,
 		handleHotUpdate: hot_update,
 	};
 }
