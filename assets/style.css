@@ -126,6 +126,7 @@ nav {
 	gap: 1.2rem;
 	justify-content: flex-end;
 	align-items: center;
+	text-transform: capitalize;
 }
 .icon {
 	--icon: url(/public/images/icons/github_lines.svg);

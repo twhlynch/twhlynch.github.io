@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import handlebars from 'vite-plugin-handlebars';
+import partials from './partials';
 import fs from 'fs';
 import path from 'path';
 import postcssNesting from 'postcss-nesting';
@@ -14,11 +14,7 @@ const html_files = fs
 	}, {});
 
 export default defineConfig({
-	plugins: [
-		handlebars({
-			partialDirectory: 'partials',
-		}),
-	],
+	plugins: [partials()],
 	build: {
 		rollupOptions: {
 			input: html_files,
