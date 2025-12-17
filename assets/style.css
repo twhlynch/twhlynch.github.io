@@ -292,7 +292,7 @@ footer {
 
 		img {
 			width: 100%;
-			aspect-ratio: 2 / 1;
+			height: 100%;
 			border-radius: 0.5rem;
 			object-fit: cover;
 			object-position: top center;
