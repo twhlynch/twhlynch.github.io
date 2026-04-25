@@ -5,7 +5,8 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"thumbnails": "for f in public/images/thumbnails/*.png; do [ -f \"${f%.png}.jpg\" ] && continue; ffmpeg -y -i \"$f\" -vf \"scale='min(1000,iw)':-1:flags=lanczos,format=rgb24\" -c:v mjpeg -pix_fmt yuvj444p -q:v 2 \"${f%.png}.jpg\"; done"
 	},
 	"devDependencies": {
 		"postcss-nesting": "^13.0.2",
