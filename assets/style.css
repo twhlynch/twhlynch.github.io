@@ -157,6 +157,7 @@ nav {
 		&.i-astro { --icon: url(/public/images/icons/astro.svg); }
 		&.i-vue { --icon: url(/public/images/icons/vue.svg); }
 		&.i-js { --icon: url(/public/images/icons/js.svg); }
+		&.i-ts { --icon: url(/public/images/icons/ts.svg); }
 		&.i-python { --icon: url(/public/images/icons/python.svg); }
 		&.i-cpp { --icon: url(/public/images/icons/cpp.svg); }
 		&.i-github-alt { --icon: url(/public/images/icons/github_alt.svg); }
