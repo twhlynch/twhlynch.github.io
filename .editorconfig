@@ -6,3 +6,5 @@ indent_style = tab
 indent_size = 4
 max_line_length = 120
 
+[*.svg]
+max_line_length = 80
