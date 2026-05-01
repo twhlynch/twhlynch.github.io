@@ -477,6 +477,15 @@ h4.title {
 .ring-right {
 	rotate: 90deg;
 }
+@media screen and (max-width: 490px) {
+	nav {
+		position: relative;
+	}
+	.webring {
+		position: absolute;
+		bottom: -1.2rem;
+	}
+}
 
 #halftone {
 	position: absolute;
