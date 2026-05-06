@@ -163,6 +163,9 @@ nav {
 		&.i-nvim { --icon: url(/public/images/icons/neovim.svg); }
 		&.i-html { --icon: url(/public/images/icons/html.svg); }
 		&.i-miraheze { --icon: url(/public/images/icons/miraheze.svg); }
+		&.i-kofi { --icon: url(/public/images/icons/kofi.svg); }
+		&.i-git { --icon: url(/public/images/icons/git.svg); }
+		&.i-ghostty { --icon: url(/public/images/icons/ghostty.svg); }
 	}
 }
 
