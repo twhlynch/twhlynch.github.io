@@ -489,6 +489,18 @@ h4.title {
 	}
 }
 
+#halftone-wrapper {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-mask-image: linear-gradient(to top, black 0%, black 30%, transparent 60%);
+	mask-image: linear-gradient(to top, black 0%, black 30%, transparent 60%);
+}
 #halftone {
 	position: absolute;
 	left: 0;
@@ -496,9 +508,6 @@ h4.title {
 	width: 100svw;
 	filter: invert();
 	opacity: 0.2;
-	z-index: -1;
-	user-select: none;
-	-moz-user-select: none;
 }
 
 @view-transition {
