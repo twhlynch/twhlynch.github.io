@@ -17,6 +17,10 @@ const quotes = [
 	'index was here',
 	'Rock paper scissors, you go first',
 	'What a nice view, do you?',
+	"theres bigger twh's to lynch gng",
+	'I am Grabby. Just Grabby. Nothing more, nothing less.',
+	'Never give your up. Hueahuhuehehi',
+	'The clock is round in both directions',
 ];
 
 export function setup_idnex() {
