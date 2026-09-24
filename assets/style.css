@@ -166,6 +166,8 @@ nav {
 		&.i-kofi { --icon: url(/public/images/icons/kofi.svg); }
 		&.i-git { --icon: url(/public/images/icons/git.svg); }
 		&.i-ghostty { --icon: url(/public/images/icons/ghostty.svg); }
+		&.i-asm { --icon: url(/public/images/icons/assembly.svg); }
+		&.i-cmake { --icon: url(/public/images/icons/cmake.svg); }
 	}
 }
 
